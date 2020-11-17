@@ -52,3 +52,7 @@ ol, ul {
 .selected-move {
   font-weight: bold;
 }
+
+.highlight {
+  background-color: yellow;
+}
