@@ -46,11 +46,12 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
+  static SQUARE_NUM = Board.SIZE ** 2;
   constructor(props) {
     super(props);
     this.state = {
       history: [{
-        squares: Array(9).fill(null),
+        squares: Array(Game.SQUARE_NUM).fill(null),
         col: null,
         row: null,
       }],
@@ -115,6 +116,8 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
+    } else if (this.state.stepNumber === Game.SQUARE_NUM) {
+      status = 'Draw!';
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
