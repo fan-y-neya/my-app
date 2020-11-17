@@ -31,10 +31,10 @@ class Board extends React.Component {
       <div>
         {(() => {
           const dom = [];
-          for (let i = 0; i < 3; i++) {
+          for (let i = 0; i < Board.SIZE; i++) {
             const square = [];
-            for (let j = 0; j < 3; j++) {
-              square.push(this.renderSquare(i * 3 + j))
+            for (let j = 0; j < Board.SIZE; j++) {
+              square.push(this.renderSquare(i * Board.SIZE + j))
             }
             dom.push(<div className="board-row">{square}</div>);
           }
